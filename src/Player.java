@@ -11,6 +11,12 @@ public class Player extends Character implements KeyListener {
 		// TODO 自動生成されたメソッド・スタブ
 		
 	}
+	
+	public void move() {
+		super.move();
+		if(x < 0) x = 0;
+		if(x > 370) x = 370;
+	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -20,6 +26,9 @@ public class Player extends Character implements KeyListener {
 		}
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			vx =5;
+		}
+		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+			GameWorld.playerBullets.add(new PlayerBullet(x, y, 0, -10));
 		}
 	}
 
