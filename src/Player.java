@@ -8,15 +8,8 @@ public class Player extends Character implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO 自動生成されたメソッド・スタブ
-		
 	}
 	
-	public void move() {
-		super.move();
-		if(x < 0) x = 0;
-		if(x > 370) x = 370;
-	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -29,6 +22,7 @@ public class Player extends Character implements KeyListener {
 		}
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
 			GameWorld.playerBullets.add(new PlayerBullet(x, y, 0, -10));
+			System.out.println("弾の数="+ GameWorld.playerBullets.size());
 		}
 	}
 
@@ -42,4 +36,12 @@ public class Player extends Character implements KeyListener {
 			vx =0;
 		}
 	}
+	
+	public void move() {
+		super.move();
+		if(x < 0) x = 0;
+		if(x > 370) x = 370;
+	}
+	
+	
 }

@@ -8,14 +8,18 @@ public class GameFrame extends MyFrame {
 		GameWorld.playerBullets = new Vector<PlayerBullet>();
 		while(true) {
 			clear();
-			GameWorld.player.draw(this);;
+			GameWorld.player.draw(this);
 			GameWorld.player.move();
 			int i = 0;
-			if(i < GameWorld.playerBullets.size()) {
+			while(i < GameWorld.playerBullets.size()) {
 				PlayerBullet b = GameWorld.playerBullets.get(i);
 				b.draw(this);
 				b.move();
-				i++;
+				if(b.y< 0) {
+					GameWorld.playerBullets.remove(i);
+				}else {
+					i++;
+				}
 			}
 			sleep(0.03);
 		}
