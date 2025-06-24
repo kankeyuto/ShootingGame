@@ -9,17 +9,17 @@ public class EnemyBase extends Enemy {
 		if(x > 300) vx = -1;
 		if(x < 100) vx = 1;
 		if(Math.random() < 0.05) {
-			GameWorld.enemies.add(new StraightEnemy(x, y, 0, 1.3));
+			GameWorld.enemies.add(new StraightEnemy(x, y, 0, 1));
 		}
 		if(Math.random() < 0.05) {
 			GameWorld.enemies.add(new RandomEnemy(x, y, 0, 1));
 		}
 //		練習問題11-1.
 		if(Math.random() < 0.05) {
-			GameWorld.enemies.add(new DropEnemy(x, y, 0, 1.5));
+			GameWorld.enemies.add(new DropEnemy(x, y, 0, 1));
 		}
 		if(Math.random() < 0.05) {
-			GameWorld.enemies.add(new CurveEnemy(x, y, 0, 1.8));
+			GameWorld.enemies.add(new CurveEnemy(x, y, 0, 1));
 		}
 		
 	}

@@ -7,7 +7,7 @@ public class DropEnemy extends Enemy {
 	}
 	public void move() {
 		super.move();
-		vy = vy + 0.1;
+		vy = vy + 0.05;
 	}
 //	練習問題11-2.
 	public void draw(MyFrame f) {

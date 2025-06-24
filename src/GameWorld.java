@@ -6,4 +6,6 @@ public class GameWorld {
 //	練習問題10-3.
 	static Vector<PracticeBullet> practiceBullets;
 	static Vector<Enemy> enemies;
+	static boolean enterPressed;
+	static int stage;
 }
