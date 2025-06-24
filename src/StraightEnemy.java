@@ -2,6 +2,8 @@
 public class StraightEnemy extends Enemy {
 	public StraightEnemy(double x, double y, double vx, double vy) {
 		super(x, y, vx, vy);
+//		練習問題12-1.
+		life = 5;
 	}
 //	練習問題11-2.
 	public void draw(MyFrame f) {

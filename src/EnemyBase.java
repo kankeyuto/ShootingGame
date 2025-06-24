@@ -2,23 +2,24 @@
 public class EnemyBase extends Enemy {
 	public EnemyBase(double x, double y, double vx, double vy) {
 		super(x, y, vx, vy);
+		life = 20;
 	}
 	public void move() {
 		super.move();
 		if(x > 300) vx = -1;
 		if(x < 100) vx = 1;
 		if(Math.random() < 0.05) {
-			GameWorld.enemies.add(new StraightEnemy(x, y, 0, 2));
+			GameWorld.enemies.add(new StraightEnemy(x, y, 0, 1.3));
 		}
 		if(Math.random() < 0.05) {
 			GameWorld.enemies.add(new RandomEnemy(x, y, 0, 1));
 		}
 //		練習問題11-1.
 		if(Math.random() < 0.05) {
-			GameWorld.enemies.add(new DropEnemy(x, y, 0, 3));
+			GameWorld.enemies.add(new DropEnemy(x, y, 0, 1.5));
 		}
 		if(Math.random() < 0.05) {
-			GameWorld.enemies.add(new CurveEnemy(x, y, 0, 4));
+			GameWorld.enemies.add(new CurveEnemy(x, y, 0, 1.8));
 		}
 		
 	}
