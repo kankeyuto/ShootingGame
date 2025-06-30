@@ -8,4 +8,5 @@ public class GameWorld {
 	static Vector<Enemy> enemies;
 	static boolean enterPressed;
 	static int stage;
+	static int score;
 }
