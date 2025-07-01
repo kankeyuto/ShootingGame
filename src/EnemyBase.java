@@ -23,6 +23,7 @@ public class EnemyBase extends Enemy {
 			GameWorld.enemies.add(new CurveEnemy(x, y, 0, GameWorld.stage));
 		}
 		
+		
 	}
 	public void draw(MyFrame f) {
 		f.setColor(0, 128, 0);
