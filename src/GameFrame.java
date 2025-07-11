@@ -15,25 +15,37 @@ public class GameFrame extends MyFrame {
 			GameWorld.enemies = new Vector<Enemy>();
 			GameWorld.enemies.add(new EnemyBase(120, 50, GameWorld.stage, 0));
 			GameWorld.enemies.add(new OriginalEnemy(5, 50, GameWorld.stage, 0));
-			GameWorld.enterPressed = false;
 			while(true) {
 				clear();
 				drawString("Stage = " + GameWorld.stage, 300, 50, 15);
 				drawString("Score = " + GameWorld.score, 300, 80, 15);
 				GameWorld.player.draw(this);
 				GameWorld.player.move();
-//				movePlayerBullets();
+				movePlayerBullets();
 				movePracticeBullets();
 				moveEnemies();
 				checkPlayerAndEnemies();
 				checkPlayerBulletsAndEnemies();
 				if(GameWorld.enemies.size() == 0) {
 					setColor(0, 0, 0);
-					drawString("クリア！", 100, 200, 40);
-					if(GameWorld.enterPressed) {
-						GameWorld.stage++;
-						break;
-					}
+				    drawString("クリア！", 100, 200, 40);
+
+				    // ★画面に反映されるように短くsleep
+				    sleep(0.5);
+
+				    // ★Enterが押されるまで待つループ
+				    while (!GameWorld.enterPressed) {
+				        sleep(0.03);
+				    }
+				    
+				    GameWorld.stage++;
+					GameWorld.enterPressed = false;
+					break;
+//					if(GameWorld.enterPressed) {
+//						GameWorld.stage++;
+//						GameWorld.enterPressed = false;
+//						break;
+//					}
 				}else if(GameWorld.player.y < 0) {
 					setColor(0, 0, 0);
 					drawString("GameOver", 50, 200, 40);
@@ -88,7 +100,7 @@ public class GameFrame extends MyFrame {
 		while(i < GameWorld.enemies.size()) {
 			Enemy e = GameWorld.enemies.get(i);
 			if(e.y > 400) {
-				GameWorld.enemies.get(i);
+				GameWorld.enemies.remove(i);
 			}else {
 				i++;
 			}
@@ -136,8 +148,8 @@ public class GameFrame extends MyFrame {
 	
 	public boolean checkHit(Character a, Character b) {
 //		練習問題12-2.
-		if(Math.abs(a.x-b.x) <= 15 &&
-		   Math.abs(a.y-b.y) <= 15) {
+		if(Math.abs(a.x-b.x) <= 30 &&
+		   Math.abs(a.y-b.y) <= 30) {
 			return true;
 		}else {
 			return false;

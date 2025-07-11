@@ -6,6 +6,6 @@ public class PlayerBullet extends Character {
 //	練習問題10-1.
 	public void draw(MyFrame f) {
 		f.setColor(0 ,0 ,0);
-		f.fillRect(x+10, y, 10, 15);
+		f.fillRect(x, y, 10, 15);
 	}
 }

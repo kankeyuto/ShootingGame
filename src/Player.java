@@ -25,22 +25,26 @@ public class Player extends Character implements KeyListener {
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			vx =5;
 		}
-//		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-//			GameWorld.playerBullets.add(new PlayerBullet(x, y, 0, -10));
-//			System.out.println("弾の数="+ GameWorld.playerBullets.size());
-//		}
-////		練習問題10-2.
-//		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-//			GameWorld.playerBullets.add(new PlayerBullet(x, y, 2, -10));
-//			System.out.println("弾の数="+ GameWorld.playerBullets.size());
-//		}
-//		練習問題10-3.
 		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-			GameWorld.practiceBullets.add(new PracticeBullet(x, y, 0, -10));
-			GameWorld.practiceBullets.add(new PracticeBullet(x, y, 2, -10));
-			GameWorld.practiceBullets.add(new PracticeBullet(x, y, -2, -10));
-			System.out.println("弾の数="+ GameWorld.practiceBullets.size());
+			GameWorld.playerBullets.add(new PlayerBullet(x, y, 0, -10));
+			System.out.println("弾の数="+ GameWorld.playerBullets.size());
 		}
+//		練習問題10-2.
+		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+			GameWorld.playerBullets.add(new PlayerBullet(x, y, 2, -10));
+			System.out.println("弾の数="+ GameWorld.playerBullets.size());
+		}
+		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+			GameWorld.playerBullets.add(new PlayerBullet(x, y, -2, -10));
+			System.out.println("弾の数="+ GameWorld.playerBullets.size());
+		}
+//		練習問題10-3.
+//		if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+//			GameWorld.practiceBullets.add(new PracticeBullet(x, y, 0, -10));
+//			GameWorld.practiceBullets.add(new PracticeBullet(x, y, 2, -10));
+//			GameWorld.practiceBullets.add(new PracticeBullet(x, y, -2, -10));
+//			System.out.println("弾の数="+ GameWorld.practiceBullets.size());
+//		}
 		if(e.getKeyCode() == KeyEvent.VK_ENTER) {
 			System.out.println("Enterキーが押されました。");
 			GameWorld.enterPressed= true;
